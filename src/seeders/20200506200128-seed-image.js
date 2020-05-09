@@ -10,14 +10,11 @@ module.exports = {
 
     while (amount--){
       data.push({
-         ip: faker.internet.ip(),
          url: faker.image.imageUrl(), 
-         imageable_id: faker.internet.ip(),
-         imageable_type: faker.lorem.words(),
 
          createdAt: new Date(),
          updatedAt: new Date()
-      })
+      });
     }
      
     return queryInterface.bulkInsert("Images", data, );

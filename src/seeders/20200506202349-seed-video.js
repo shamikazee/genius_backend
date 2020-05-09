@@ -10,7 +10,6 @@ module.exports = {
 
     while (amount--){
       data.push({
-         ip: faker.internet.ip(),
          title: faker.name.title(),
          pcontent_title: faker.name.title(),
          content: faker.lorem.text(),
@@ -18,7 +17,7 @@ module.exports = {
          views: faker.random.number(),
          createdAt: new Date(),
          updatedAt: new Date()
-      })
+      });
     }
      
     return queryInterface.bulkInsert("Videos", data, );

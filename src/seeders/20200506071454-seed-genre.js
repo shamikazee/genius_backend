@@ -10,12 +10,10 @@ module.exports = {
 
     while (amount--){
       data.push({
-         ip: faker.internet.ip(),
          slug: faker.lorem.slug(),
-         followers: faker.random.number(),
          createdAt: new Date(),
          updatedAt: new Date()
-      })
+      });
     }
      
     return queryInterface.bulkInsert("Genres", data, );
@@ -27,30 +25,5 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete("Genres", null, {});
-  }
-};'use strict';
-
-module.exports = {
-  up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkInsert('People', [{
-        name: 'John Doe',
-        isBetaMember: false
-      }], {});
-    */
-  },
-
-  down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.bulkDelete('People', null, {});
-    */
   }
 };

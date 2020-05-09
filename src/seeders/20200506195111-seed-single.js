@@ -10,13 +10,12 @@ module.exports = {
 
     while (amount--){
       data.push({
-         ip: faker.internet.ip(),
          views: faker.random.number(), 
          about: faker.lorem.paragraph(),
          votes: faker.random.number(), 
          createdAt: new Date(),
          updatedAt: new Date()
-      })
+      });
     }
      
     return queryInterface.bulkInsert("Singles", data, );

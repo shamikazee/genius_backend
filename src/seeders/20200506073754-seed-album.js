@@ -10,15 +10,15 @@ module.exports = {
 
     while (amount--){
       data.push({
-         ip: faker.internet.ip(),
          title: faker.name.title(),
          release_date: faker.date.past(),
          views: faker.random.number(), 
          votes: faker.random.number(),
          about: faker.lorem.paragraph(),
+         
          createdAt: new Date(),
          updatedAt: new Date()
-      })
+      });
     }
      
     return queryInterface.bulkInsert("Albums", data, );

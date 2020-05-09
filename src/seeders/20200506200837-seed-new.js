@@ -10,7 +10,6 @@ module.exports = {
 
     while (amount--){
       data.push({
-         ip: faker.internet.ip(),
          title: faker.name.title(), 
          publish_date: faker.date.future(),
          content_title: faker.lorem.text(),
@@ -18,7 +17,7 @@ module.exports = {
          votes: faker.random.number(),
          createdAt: new Date(),
          updatedAt: new Date()
-      })
+      });
     }
      
     return queryInterface.bulkInsert("News", data, );

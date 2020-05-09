@@ -10,13 +10,10 @@ module.exports = {
 
     while (amount--){
       data.push({
-         ip: faker.internet.ip(),
-         content: faker.lorem.text(),
-         lyricable_id: faker.internet.ip(),
-         lyricable_type: faker.lorem.words(), 
+         content: faker.lorem.text(), 
          createdAt: new Date(),
          updatedAt: new Date()
-      })
+      });
     }
      
     return queryInterface.bulkInsert("Lyrics", data, );
