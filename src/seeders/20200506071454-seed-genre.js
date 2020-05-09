@@ -5,16 +5,17 @@ const faker = require('faker');
 module.exports = {
   up: (queryInterface, Sequelize) => {
     let data = [];
-    let amount = 20;
+    let genres = ['Rap','Pop','R&B','Rock','Country'];
 
 
-    while (amount--){
+    genres.forEach((genre) => {
       data.push({
-         slug: faker.lorem.slug(),
-         createdAt: new Date(),
-         updatedAt: new Date()
-      });
-    }
+        slug: genre,
+        createdAt: new Date(),
+        updatedAt: new Date()
+     });
+    })
+      
      
     return queryInterface.bulkInsert("Genres", data, );
   },
